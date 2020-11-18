@@ -120,12 +120,11 @@ tti-lw-stack,is-db,create-oauth-client,--tenant-id=NULL,--id=console-eu1,--name=
 ```
 {{</ tabs/tab >}}
 {{</ tabs/container >}}
-
-> 
-- Replace `--tenant-id=NULL` with `--tenant-id=your-tenant-id` in single-tenant deployments.
-- Replace the values of `--id`, `--name` and `--secret` with your own.
-- For secondary clusters (where the domain of the Console is not equal to the domain of the Identity Server), omit `--redirect-uri=/console/oauth/callback` and `--logout-redirect-uri=/console`.
-- You can use a similar command for the Device Claiming server if you use `/claim` instead of `/console` for the redirect URIs.
+  
+>- Replace `--tenant-id=NULL` with `--tenant-id=your-tenant-id` in single-tenant deployments.
+>- Replace the values of `--id`, `--name` and `--secret` with your own.
+>- For secondary clusters (where the domain of the Console is not equal to the domain of the Identity Server), omit `--redirect-uri=/console/oauth/callback` and `--logout-redirect-uri=/console`.
+>- You can use a similar command for the Device Claiming server if you use `/claim` instead of `/console` for the redirect URIs.
 
 ## Migrate Identity Server Database
 

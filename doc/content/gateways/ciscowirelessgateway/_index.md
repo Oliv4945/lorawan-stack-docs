@@ -94,10 +94,12 @@ You can test your Internet configuration with the `ping` command, for example pi
 Gateway# ping ip 8.8.8.8
 ```
 
-> To see more information about the gateway's IP and the network, you can use 
-> `show interfaces FastEthernet 0/1`
-> `show ip interfaces FastEthernet 0/1` or
-> `show ip route`.
+> To see more information about the gateway's IP and the network, you can use: 
+> ```bash
+> show interfaces FastEthernet 0/1
+> show ip interfaces FastEthernet 0/1
+> show ip route
+>```
 
 #### Date and Time
 
