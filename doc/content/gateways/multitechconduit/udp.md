@@ -7,7 +7,7 @@ This section contains instructions for connecting the Multitech Conduit AEP to {
 
 <!--more-->
 
-> Note: the UDP Packet Forwarder does not correctly handle unstable connectivity and has no security. It also does not support configuration of frequency plans from the Network Server. {{% tts %}} supports {{% lbs %}}, which solves all of these problems, so please [use that instead]({{< relref "lbs" >}}).
+> the UDP Packet Forwarder does not correctly handle unstable connectivity and has no security. It also does not support configuration of frequency plans from the Network Server. {{% tts %}} supports {{% lbs %}}, which solves all of these problems, so please [use that instead]({{< relref "lbs" >}}).
 
 ## Configuration
 

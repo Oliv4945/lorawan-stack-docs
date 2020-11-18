@@ -24,7 +24,7 @@ We will deploy {{% tts %}} across two availability zones (AZs). In each AZ we ha
 
 User uploads of profile pictures and end device pictures are stored in S3 buckets.
 
-> **NOTE:** In multi-cluster deployments, the PostgreSQL database, the S3 bucket for profile pictures and the S3 bucket for end device pictures are only deployed in the primary cluster.
+> In multi-cluster deployments, the PostgreSQL database, the S3 bucket for profile pictures and the S3 bucket for end device pictures are only deployed in the primary cluster.
 
 ## Configuration
 
@@ -48,4 +48,4 @@ All internal communication between the different components of {{% tts %}} is do
 
 In addition to containers for the different components of {{% tts %}}, our deployment also contains proxy containers to route HTTP and gRPC requests to the correct component. Prometheus containers are used for monitoring the deployment.
 
-> **NOTE:** In multi-cluster deployments, the Identity Server containers in secondary clusters are replaced with containers that proxy requests to Identity Server in the primary cluster.
+> In multi-cluster deployments, the Identity Server containers in secondary clusters are replaced with containers that proxy requests to Identity Server in the primary cluster.

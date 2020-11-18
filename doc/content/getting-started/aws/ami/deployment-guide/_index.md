@@ -61,7 +61,7 @@ This template allows the user to customize the deployment. The following is a li
 |Domain|Domain name. You should be able to configure DNS for the domain. TLS certificates from Let's Encrypt will automatically be requested.|-|
 |Network Title*|The title of your deployment.|`The Things Enterprise Stack for LoRaWAN`|
 
-> \* This is an optional field
+<blockquote>* Optional field</blockquote>
 
 #### Security Configuration
 
@@ -75,7 +75,7 @@ This template allows the user to customize the deployment. The following is a li
 |SSH Key|Name of an existing EC2 KeyPair to enable SSH access to your instance.|-|
 |SendGrid API Key*|API key for [SendGrid](https://sendgrid.com/) to send emails.|-|
 
-> \* This is an optional field
+<blockquote>* Optional field</blockquote>
 
 #### External Connectivity
 

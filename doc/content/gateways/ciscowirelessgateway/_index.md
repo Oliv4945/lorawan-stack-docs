@@ -24,7 +24,7 @@ Create a gateway by following the instructions for the [Console]({{< ref "/getti
 
 The **EUI** is derived from the **MAC_ADDRESS** that can be found on the back panel of the gateway. To get the EUI from the MAC_ADDRESS insert `FFFE` **after the first 6 characters** to make it a 64bit EUI.
 
->**Note:** If your **MAC_ADDRESS** is `5B:A0:CB:80:04:2B` then the **EUI** is `5B A0 CB FF FE 80 04 2B`.
+> If your **MAC_ADDRESS** is `5B:A0:CB:80:04:2B` then the **EUI** is `5B A0 CB FF FE 80 04 2B`.
 
 The **Gateway Server Address** is the same as what you use instead of `thethings.example.com` in the [Getting Started guide]({{< ref "/getting-started" >}}).
 
@@ -38,7 +38,7 @@ If you are using MacOS or Linux, connect to the Gateway by opening a terminal an
 $ ls /dev/tty.usb*
 ```
 
->**Note:** This displays the list of available USB serial devices.
+> This displays the list of available USB serial devices.
 
 Once you have found the one matching the Cisco console, connect using the following command:
 
@@ -94,7 +94,7 @@ You can test your Internet configuration with the `ping` command, for example pi
 Gateway# ping ip 8.8.8.8
 ```
 
->**Note:** To see more information about the gateway's IP and the network, you can use 
+> To see more information about the gateway's IP and the network, you can use 
 > `show interfaces FastEthernet 0/1`
 > `show ip interfaces FastEthernet 0/1` or
 > `show ip route`.
@@ -139,7 +139,7 @@ Gateway(config)# gps ubx enable
 Gateway(config)# exit
 ```
 
->**Note:** This command may return the message `packet-forwarder firmware is not installed`, this message can be ignored.
+> This command may return the message `packet-forwarder firmware is not installed`, this message can be ignored.
 
 #### Enable Radio
 
@@ -169,7 +169,7 @@ Gateway(config)# no radio off
 Gateway(config)# exit
 ```
 
->**Note:** The `show radio` command also shows you more information about the LoRa concentrator powering the gateway. For example, **LORA_SKU** indicates the base frequency of the concentrator.
+> The `show radio` command also shows you more information about the LoRa concentrator powering the gateway. For example, **LORA_SKU** indicates the base frequency of the concentrator.
 
 #### Enable Authentication
 
@@ -179,7 +179,7 @@ To enable this secret system, you can use the following commands:
 
 + `Gateway# configure terminal` to enter global configuration mode.
 + To set the secret, you can use different commands:
-  `Gateway(config)# enable secret <secret>` to enter in plaintext the secret you wish to set, instead of `<secret>`. *Note*: Special characters cannot be used in plain secrets.
+  `Gateway(config)# enable secret <secret>` to enter in plaintext the secret you wish to set, instead of `<secret>`. **Note**: Special characters cannot be used in plain secrets.
   `Gateway(config)# enable secret 5 <secret>` to enter the secret **md5-encrypted**.
   `Gateway(config)# enable secret 8 <secret>` to enter the secret **SHA512-encrypted**.
 + `Gateway(config)# exit` to exit global configuration mode.
@@ -250,11 +250,11 @@ Now that we know the packet forwarder is running, let's make it run automaticall
 bash-3.2# vi /etc/init.d/S60pkt_forwarder
 ```
 
->**Note:** Press the `i` key on your keyboard to start insert mode. Once finished editing, press `ESC` and enter `:wq` to write the file and quit.
+> Press the `i` key on your keyboard to start insert mode. Once finished editing, press `ESC` and enter `:wq` to write the file and quit.
 
 Then copy paste the code below.
 
->**Note:** Replace `things.example.com` with the name of your network after `nslookup`.
+> Replace `things.example.com` with the name of your network after `nslookup`.
 
 ```bash
 SCRIPT_DIR=/etc/pktfwd
@@ -335,7 +335,7 @@ If the gateway does not connect to the {{% tts %}} after a few minutes, you can 
 bash-3.2# tail -100 var/log/pkt_forwarder.log
 ```
 
->**Note:** GPS warnings may appear, this means the packet forwarder started.
+> GPS warnings may appear, this means the packet forwarder started.
 
 If the radio failed to start, disconnect and reconnect the power supply to power-cycle the gateway.
 

@@ -34,7 +34,7 @@ Now you can edit the gateway configuration file.
 $ vi /etc/default/config.json
 ```
 
->**Note:** Press the `i` key on your keyboard to start insert mode. Once finished editing, press `ESC` and enter `:wq` to write the file and quit.
+> Press the `i` key on your keyboard to start insert mode. Once finished editing, press `ESC` and enter `:wq` to write the file and quit.
 
 Edit the server parameters:
 
@@ -52,7 +52,7 @@ If your configuration was successful, your gateway will connect to {{% tts %}} a
 
 ## Configuration using the GUI (Windows Only)
 
-> TODO: [Document using GUI](https://github.com/TheThingsNetwork/lorawan-stack/issues/1140)
+- TODO: [Document using GUI](https://github.com/TheThingsNetwork/lorawan-stack/issues/1140)
 
 ## Troubleshooting
 

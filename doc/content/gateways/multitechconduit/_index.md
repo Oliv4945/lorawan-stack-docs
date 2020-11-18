@@ -136,4 +136,4 @@ Do the following to upgrade the firmware on your device:
 - A progress bar appears indicating the status of the upgrade. When the upgrade is completed, your device reboots.
 - After the firmware upgrade is completed, verify your configuration to ensure that it is same as what you expected.
 
->**Note:** The new firmware is written into flash memory. It may take up to 10 minutes to upgrade the firmware. Do not interrupt the devices&apos; power or press the reset button during this time.
+> The new firmware is written into flash memory. It may take up to 10 minutes to upgrade the firmware. Do not interrupt the devices&apos; power or press the reset button during this time.

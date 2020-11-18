@@ -34,13 +34,13 @@ Go to AWS Route 53 and create an A record that points `domain` to the Network Lo
 
 If you are deploying a multi-tenant deployment, create an similar record for `*.domain` in addition to the plain `domain` record.
 
-> **NOTE:** Even though the current templates do not support IPv6 yet, you can already create additional AAAA records to be ready for IPv6.
+> Even though the current templates do not support IPv6 yet, you can already create additional AAAA records to be ready for IPv6.
 
 # Bastion Host (optional)
 
 The `1-2-bastion` template will deploy an EC2 instance in one of the public subnets of your VPC. This instance can be used to provide external access to your cluster. 
 
-> **NOTE:** You can also skip this template, and deploy it when you actually need external access to your cluster.
+> You can also skip this template, and deploy it when you actually need external access to your cluster.
 
 **Template:** https://thethingsindustries.s3.amazonaws.com/public/cloud/3.x/1-2-bastion.gen.template (replace `3.x` with the current minor version).
 
@@ -99,7 +99,7 @@ $ touch config.yml
 $ aws s3 cp config.yml s3://${InteropConfigBucket}/config.yml
 ```
 
-> **NOTE:** If you did not set a bucket name, see the `InteropConfigBucket` output of the `2-4b-routing-s3` stack for the name of the bucket.
+> If you did not set a bucket name, see the `InteropConfigBucket` output of the `2-4b-routing-s3` stack for the name of the bucket.
 
 # Security Group Rules
 
@@ -164,17 +164,17 @@ $ aws ecs put-account-setting-default --name containerInstanceLongArnFormat --va
 $ aws ecs put-account-setting-default --name awsvpcTrunking --value enabled --region $AWS_REGION
 ```
 
-> **NOTE:** These settings need to be applied in _each_ AWS region where you want to deploy a cluster.
+> These settings need to be applied in _each_ AWS region where you want to deploy a cluster.
 
 With these settings configured, we can deploy the `5-1-ecs-cluster` template that creates the ECS cluster and the container instances. As discussed on the [architecture page]({{< relref "../architecture" >}}), we will need the container instances for running UDP Gateway Servers. For all other services, you can consider deploying those to Fargate, in which case you won't need as much resources on the container instances.
 
-> **NOTE:** All container instances will be deployed with a `schedule_gs=true` attribute which we can use as a constraint for scheduling the UDP Gateway Server in the future.
+> All container instances will be deployed with a `schedule_gs=true` attribute which we can use as a constraint for scheduling the UDP Gateway Server in the future.
 
 **Template:** https://thethingsindustries.s3.amazonaws.com/public/cloud/3.x/5-1-ecs-cluster.gen.template (replace `3.x` with the current minor version).
 
 In addition to the re-used parameters and the name of your SSH keypair (see [Prerequisites]({{< relref "../prerequisites" >}})), this template asks for an **Instance Type** and number of container instances. It is typically fine for small clusters to start with 2x `m5.large`. If you plan to use Fargate for all containers other than the UDP Gateway Server, 2x `t3.micro` may already be sufficient. Again, you can scale to more or larger instances as your network grows.
 
-> **NOTE:** `t3` instances [don't support ENI trunking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html#eni-trunking-supported-instance-types) that is required to run a larger number of containers on the instance.
+> `t3` instances [don't support ENI trunking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html#eni-trunking-supported-instance-types) that is required to run a larger number of containers on the instance.
 
 # Operations
 
@@ -231,7 +231,7 @@ Fill the re-used parameters (see [Prerequisites]({{< relref "../prerequisites" >
 
 The official image is `docker.io/thethingsindustries/lorawan-stack:3.x-aws-prometheus` (replace `3.x` with the current minor version). When deploying to `FARGATE`, make sure to select [a valid combination of CPU and Memory](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-cpu-memory-error.html), or you'll get an error about "Invalid CPU or memory value specified" when you deploy the stack. Prometheus typically needs CPU=1024 and Memory=2048.
 
-> **NOTE:** By default, Prometheus stores metrics only for a limited time. You can optionally enable long-term storage of metrics in an S3 bucket. This is done using a [Thanos](https://thanos.io/) sidecar. We do not support querying from long-term storage yet.
+> By default, Prometheus stores metrics only for a limited time. You can optionally enable long-term storage of metrics in an S3 bucket. This is done using a [Thanos](https://thanos.io/) sidecar. We do not support querying from long-term storage yet.
 
 We recommend to point Prometheus to an external **Alertmanager URL**, so that you can be alerted about (potential) problems with your deployment.
 
@@ -255,7 +255,7 @@ We need to manually request the certificates for the first time. In the CloudFor
 
 After the task succeeds, go to **Certificate Manager**, find the new certificate, and copy its ARN. Back in CloudFormation, update the stacks for templates `3-2-load-balancer-rules` and `5-7a-certs-le`, and paste that certificate ARN.
 
-> Note: If the ECS Task has been run multiple times for some reason and there are multiple certificates in ACM, then check the Task Logs for the correct ARN.
+> If the ECS Task has been run multiple times for some reason and there are multiple certificates in ACM, then check the Task Logs for the correct ARN.
 
 To automatically renew the certificate from Let's Encrypt, we'll now deploy template `5-7b-ecs-certbot-scheduled-task`.
 
