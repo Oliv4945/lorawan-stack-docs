@@ -38,7 +38,7 @@ config/
     └── ttn-lw-stack-docker.yml    # configuration file for {{% tts %}}
 ```
 
- These example configuration files contain all of the configuration settings you need to run {{% tts %}} for development - just update the files with your server address. In the next sections, we will examine the settings in these files and provide tips for running {{% tts %}} in production.
+These example configuration files contain all of the configuration settings you need to run {{% tts %}} for development - just update the files with your server address. In the next sections, we will examine the settings in these files and provide tips for running {{% tts %}} in production.
 
 ## Configure Docker
 
